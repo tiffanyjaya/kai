@@ -11,15 +11,14 @@ from pdfminer.pdfinterp import PDFPageInterpreter
 
 from io import StringIO
 
+
 def parse(input_path):
-
-
     rsrcmgr = PDFResourceManager()
     sio = StringIO()
     device = TextConverter(rsrcmgr, sio)
     interpreter = PDFPageInterpreter(rsrcmgr, device)
 
-    for file_path in Path(input_path).iterdir():
+    for file_path in Path(input_path).glob("*.pdf"):
         file = open(file_path, "rb")
         parser = PDFParser(file)
         document = PDFDocument(parser)
@@ -32,4 +31,3 @@ def parse(input_path):
 
     device.close()
     sio.close()
-
