@@ -47,3 +47,4 @@ def parse(input_path):
     sio.close()
     device.close()
 
+parse(input_path="/Users/tiffapedia/projects/kai")

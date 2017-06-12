@@ -1,0 +1,10 @@
+# directories
+inputs/
+node_modules/
+.idea/
+
+# file extensions
+*.log
+*.pdf
+*.pyc
+*.swp
