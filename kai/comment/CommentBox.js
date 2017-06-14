@@ -1,6 +1,5 @@
+import Comment from "./Comment";
 import React from "react";
-
-import Comment from "comment";
 
 class CommentBox extends React.Component {
 
@@ -34,5 +33,3 @@ class CommentBox extends React.Component {
     }
 
 }
-
-export default CommentBox;

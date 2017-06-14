@@ -1,7 +1,13 @@
+let debug = process.env.NODE_ENV !== "production";
+let webpack = require("webpack");
+
 module.exports = {
-    entry: "./kai/components/main.js",
+    context: __dirname,
+    devtool: debug ? "inline-source-map" : false,
+    entry: "./kai/MainEntry.js",
     output: {
-        filename: "public/bundle.js"
+        path: __dirname + "/public",
+        filename: "kai.min.js"
     },
     module: {
         loaders: [
@@ -17,5 +23,9 @@ module.exports = {
     },
     resolveLoader: {
         moduleExtensions: ["-loader"]
-    }
+    },
+    plugins: debug ? [] : [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false})
+    ]
 }
