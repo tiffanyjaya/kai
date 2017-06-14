@@ -4,7 +4,7 @@
   "description": "Simple Budgeting App",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "esw webpack.config.* src tools; exit 0"
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,17 @@
   "homepage": "https://github.com/tiffanyjaya/kai#readme",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-watch": "^3.1.0",
     "webpack": "^2.6.1"
   }
 }
